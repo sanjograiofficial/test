@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="quiz.css" type="text/css">
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">Test</h1>
+        </div>
+        <div style="margin-left: 20px;">
+            <ol>
+                <li>
+                    <p id="1">Who are you?</p>
+                    <div id="firstQ">
+                        <input type="radio" name="fi" class="f" name="" id="1a">Me
+                        <input type="radio" name="fi" class="f" id="1b">You<br>
+                        <input type="radio" name="fi" class="f" id="1c">They
+                        <input type="radio" name="fi" class="f" id="1d">John Cena
+                    </div>
+                    </li>
+                    <li>
+                    <p id="2">Why are you here?</p>
+                    <div id="secondQ">
+                        <input type="radio" name="se" id="2a">Just Cause
+                        <input type="radio" name="se" id="2b">Nope<br>
+                        <input type="radio" name="se" id="2c">Cause I can
+                        <input type="radio" name="se" id="2d">blah
+                    </div>
+                    </li>
+                    <li>
+                    <p id="3">Tell me "Your Name".</p>
+                    <div id="thirdQ">
+                        <input type="radio" name="th" id="3a">My name
+                        <input type="radio" name="th" id="3b">What?<br>
+                        <input type="radio" name="th" id="3c">Not telling
+                        <input type="radio" name="th" id="3d">Your Name
+                    </div>
+                    </li>
+                    <li>
+                    <p id="4">Are you a happy?</p>
+                    <div id="fourthQ">
+                        <input type="radio" name="fo" id="4a">Yes
+                        <input type="radio" name="fo" id="4b">I'mma kill myself<br>
+                        <input type="radio" name="fo" id="4c">No
+                        <input type="radio" name="fo" id="4d">Maybe
+                    </div>
+                    </li>
+                    <li>
+                    <p id="5">What's this?</p>
+                    <div id="fifthQ">
+                        <input type="radio" name="fif" id="5a">That
+                        <input type="radio" name="fif" id="5b">What?<br>
+                        <input type="radio" name="fif" id="5c">Nothing
+                        <input type="radio" name="fif" id="5d">End
+                    </div>
+                    </li>
+            </ol>
+            <span><button id="submit" onclick="subm()">Submit</button></span>
+            <p id="ans"></p>
+            <p id="wrong"></p>
+        <script>
+            
+            function subm(){
+                let count = 0;
+                let wrong = 0;
+                const first = document.querySelectorAll(".f");
+                
+                
+                if(document.getElementById("1a").checked){
+                    count++;
+                    document.getElementById("firstQ").style.backgroundColor = "green";
+
+                } else {
+                    document.getElementById("1a").checked = true;
+                    document.getElementById("firstQ").style.backgroundColor = "red";
+                    wrong++;
+                }
+
+                if(document.getElementById("2c").checked){
+                    count++;
+                    document.getElementById("secondQ").style.backgroundColor = "green";
+                    
+
+                } else {
+                    document.getElementById("2c").checked = true;
+                    document.getElementById("secondQ").style.backgroundColor = "red";
+                    wrong++;
+                }
+
+                if(document.getElementById("3d").checked){
+                    count++;
+                    document.getElementById("thirdQ").style.backgroundColor = "green";
+
+                } else{
+                    document.getElementById("3d").checked = true;
+                    document.getElementById("thirdQ").style.backgroundColor = "red";
+                    wrong++;
+                }
+
+                if(document.getElementById("4b").checked){
+                    count++;
+                    document.getElementById("fourthQ").style.backgroundColor = "green";
+
+                } else {
+                    document.getElementById("4b").checked = true;
+                    document.getElementById("fourthQ").style.backgroundColor = "red";
+                    wrong++;
+                }
+
+                if(document.getElementById("5a").checked){
+                    count++;
+                    document.getElementById("fifthQ").style.backgroundColor = "green";
+
+                } else {
+                    document.getElementById("5a").checked = true;
+                    document.getElementById("fifthQ").style.backgroundColor = "red";
+                    wrong++;
+                }
+
+                document.getElementById("ans").innerHTML = "Total score = " + count;     
+                document.getElementById("wrong").innerHTML = "You got " + wrong + "questions wrong.";          
+            }
+        </script>
+</body>
+</html>

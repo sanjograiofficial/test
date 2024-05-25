@@ -1,0 +1,10 @@
+body{
+    background-color: bisque;
+}
+input{
+    cursor: pointer;
+}
+button{
+    background-color: beige;
+    margin-left: 20px;
+}
